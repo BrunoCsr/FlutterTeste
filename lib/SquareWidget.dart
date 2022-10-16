@@ -1,10 +1,4 @@
-import 'dart:developer';
-
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class SquareWidget extends StatefulWidget {
   final double size;
@@ -20,8 +14,9 @@ class SquareWidget extends StatefulWidget {
 
 class _SquareWidgetState extends State<SquareWidget> {
   bool click = false;
-  int n = 0;
-  int dn = 0;
+  int n = 0; //numero de cliques
+  int dn = 0; //numero de cliques duplos
+  late String text1 = 'Um: $n';
 
   void tap() {
     setState(() {
@@ -39,24 +34,27 @@ class _SquareWidgetState extends State<SquareWidget> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        width: widget.size,
-        height: widget.size,
-        color: click == false ? Colors.blue : Colors.amber,
-        child: Stack(
-          children: [
-            Center(
-              child: Text("Cliques: $n. Cliques duplos: $dn."),
-            ),
-            GestureDetector(
-              onDoubleTap: () {
-                doubleTap();
-              },
-              onTap: () {
-                tap();
-              },
-            ),
-          ],
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(25),
+        child: Container(
+          width: widget.size,
+          height: widget.size,
+          color: click == false ? Colors.blue : Colors.lightGreenAccent,
+          child: Stack(
+            children: [
+              Center(
+                child: Text("Cliques: $n. Cliques duplos: $dn."),
+              ),
+              GestureDetector(
+                onDoubleTap: () {
+                  doubleTap();
+                },
+                onTap: () {
+                  tap();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
