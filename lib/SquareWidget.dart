@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 class SquareWidget extends StatefulWidget {
   final double size;
+  MaterialColor color = Colors.blue;
 
-  const SquareWidget({
-    super.key,
-    required this.size,
-  });
+  SquareWidget({super.key, required this.size, this.color = Colors.blue});
 
   @override
   State<SquareWidget> createState() => _SquareWidgetState();
@@ -17,10 +15,13 @@ class _SquareWidgetState extends State<SquareWidget> {
   int n = 0; //numero de cliques
   int dn = 0; //numero de cliques duplos
   late String text1 = 'Um: $n';
+  Color color = Color(0xffe3ffc7);
+  Color color2 = Color(0xff2196f3);
 
   void tap() {
     setState(() {
       click = !click;
+      click ? widget.color = Colors.amber : widget.color = Colors.blue;
       n += 1;
     });
   }
@@ -39,7 +40,7 @@ class _SquareWidgetState extends State<SquareWidget> {
         child: Container(
           width: widget.size,
           height: widget.size,
-          color: click == false ? Colors.blue : Colors.lightGreenAccent,
+          color: widget.color,
           child: Stack(
             children: [
               Center(
