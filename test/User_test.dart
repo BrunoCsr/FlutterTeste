@@ -14,4 +14,15 @@ void main() {
     //ASSERT
     expect(user.idade, 18);
   });
+
+  test('Um usuário muda de nome', () async {
+    //ARRANGE
+    final user = User('Jé', 17);
+
+    //ACT
+    user.mudarDeNome('Jacó');
+
+    //ASSERT
+    expect(user.nome, 'Jacó');
+  });
 }
