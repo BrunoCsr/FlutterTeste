@@ -1,16 +1,24 @@
-# c214_seminario
+# <img src="https://storage.googleapis.com/cms-storage-bucket/ec64036b4eacc9f3fd73.svg" alt = "logo Appium" width = "130">
+Trabalho desenvolvido sobre a ferramenta de teste do Flutter.
 
-A new Flutter project.
+<h1> :speech_balloon: O que é o Flutter? </h1>
+Flutter é um kit de desenvolvimento de interface de usuário (UI toolkit e framework), de código aberto, criado pela empresa Google em 2015, baseado na linguagem de programação Dart, que possibilita a criação de aplicativos compilados nativamente, para os sistemas operacionais Android, IOS, Windows, Mac, Linux, Fuchsia e Web.
 
-## Getting Started
+<h1> :white_check_mark: Pré-requisitos: </h1>
 
-This project is a starting point for a Flutter application.
+- [Git](https://git-scm.com/downloads)
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [Flutter SDK](https://docs.flutter.dev/get-started/install)
 
-A few resources to get you started if this is your first Flutter project:
+### Verifique se a instalação do Flutter está correta:
+  
+```bash
+C:\src\flutter>flutter doctor
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h1> :dart: Rodando os testes do projeto: </h1>
+  Basta acessar o terminal do projeto e executar o seguinte comando
+  
+ ```bash
+flutter test
+```
